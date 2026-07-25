@@ -1,0 +1,1038 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Sorted. | Student Resources, University Admissions & Financial Aid</title>
+<meta name="description" content="Helping students make sense of opportunities, university admissions, research, financial aid, and everything in between.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,600;0,9..144,700;0,9..144,900;1,9..144,500&family=Inter:wght@400;500;600;700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+<!--
+  VISITOR TRACKING (Google Analytics)
+  1. Go to analytics.google.com, create a free GA4 property for your site.
+  2. It will give you a Measurement ID that looks like G-XXXXXXXXXX.
+  3. Uncomment the two script tags below and replace G-XXXXXXXXXX in BOTH places with your real ID.
+  4. Once live, go to Reports > Realtime in Google Analytics to see how many people are on the site right now.
+
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+  gtag('config', 'G-XXXXXXXXXX');
+</script>
+-->
+
+
+<style>
+  :root{
+    --navy:#17324E;
+    --navy-deep:#0F2438;
+    --brown:#7A4A24;
+    --brown-deep:#5C371B;
+    --gold:#C99A3D;
+    --gold-bright:#E4B94F;
+    --bg:#EDEAE3;
+    --card:#FFFDF9;
+    --gray-mid:#8B8579;
+    --gray-dark:#332F28;
+    --line:#D9D3C6;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--bg);
+    color:var(--gray-dark);
+    font-family:'Inter',sans-serif;
+    -webkit-font-smoothing:antialiased;
+    overflow-x:hidden;
+  }
+  h1,h2,h3,.display{
+    font-family:'Fraunces',serif;
+    font-weight:700;
+    color:var(--navy);
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+  .eyebrow{
+    font-family:'Space Mono',monospace;
+    font-size:0.72rem;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    color:var(--brown);
+    font-weight:700;
+  }
+  a{color:inherit;text-decoration:none;}
+  img{max-width:100%;display:block;}
+  .wrap{max-width:1140px;margin:0 auto;padding:0 24px;}
+  section{padding:100px 0;position:relative;scroll-margin-top:72px;}
+  ::selection{background:var(--gold);color:var(--navy-deep);}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:fixed;top:0;left:0;right:0;z-index:100;
+    background:rgba(237,234,227,0.88);
+    backdrop-filter:blur(10px);
+    border-bottom:1px solid var(--line);
+  }
+  nav{
+    max-width:1140px;margin:0 auto;padding:16px 24px;
+    display:flex;align-items:center;justify-content:space-between;
+  }
+  .logo{
+    font-family:'Fraunces',serif;font-weight:900;font-size:1.4rem;color:var(--navy);
+  }
+  .logo span{color:var(--gold-bright);}
+  .nav-links{display:flex;gap:28px;list-style:none;margin:0;padding:0;}
+  .nav-links a{
+    font-size:0.86rem;font-weight:600;color:var(--gray-dark);
+    position:relative;padding:4px 0;
+  }
+  .nav-links a::after{
+    content:"";position:absolute;left:0;bottom:0;width:0;height:2px;background:var(--gold);
+    transition:width .25s ease;
+  }
+  .nav-links a:hover::after{width:100%;}
+  .nav-toggle{display:none;background:none;border:none;font-size:1.6rem;color:var(--navy);cursor:pointer;}
+
+  @media (max-width:820px){
+    .nav-links{
+      position:fixed;top:64px;left:0;right:0;bottom:0;
+      background:var(--navy-deep);
+      flex-direction:column;padding:40px 32px;gap:24px;
+      transform:translateX(100%);transition:transform .35s ease;
+    }
+    .nav-links.open{transform:translateX(0);}
+    .nav-links a{color:#F2EFE7;font-size:1.1rem;}
+    .nav-toggle{display:block;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    min-height:100vh;
+    display:flex;align-items:center;
+    background:
+      radial-gradient(circle at 85% 15%, rgba(201,154,61,0.18), transparent 45%),
+      linear-gradient(160deg, var(--navy-deep) 0%, var(--navy) 60%, #1D3A57 100%);
+    color:#F2EFE7;
+    padding-top:120px;
+  }
+  .hero .wrap{
+    display:grid;grid-template-columns:1.1fr 0.9fr;gap:60px;align-items:center;
+  }
+  .hero .eyebrow{color:var(--gold-bright);}
+  .hero h1{
+    color:#FBF8F1;font-size:clamp(2.4rem,5vw,3.6rem);line-height:1.05;margin:14px 0 22px;
+  }
+  .hero h1 em{
+    font-style:italic;color:var(--gold-bright);
+  }
+  .hero p.sub{
+    font-size:1.08rem;color:#CBD3DB;max-width:480px;line-height:1.6;margin-bottom:32px;
+  }
+  .btn{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--gold);color:var(--navy-deep);
+    font-weight:700;font-size:0.95rem;
+    padding:14px 26px;border-radius:999px;border:none;cursor:pointer;
+    transition:transform .2s ease, background .2s ease;
+  }
+  .btn:hover{background:var(--gold-bright);transform:translateY(-2px);}
+  .btn-outline{
+    background:transparent;color:#F2EFE7;border:1.5px solid rgba(242,239,231,0.4);
+  }
+  .btn-outline:hover{background:rgba(242,239,231,0.08);border-color:#F2EFE7;}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap;}
+
+  /* decoder flip card */
+  .decoder{
+    background:var(--card);
+    border-radius:20px;
+    padding:28px;
+    box-shadow:0 30px 60px rgba(0,0,0,0.35);
+    position:relative;
+    perspective:1200px;
+    border:1px solid rgba(255,255,255,0.08);
+  }
+  .decoder-label{
+    font-family:'Space Mono',monospace;font-size:0.68rem;letter-spacing:0.12em;
+    text-transform:uppercase;color:var(--gray-mid);margin-bottom:14px;display:block;
+  }
+  .flip-card{
+    height:210px;cursor:pointer;
+  }
+  .flip-inner{
+    position:relative;width:100%;height:100%;
+    transition:transform .6s cubic-bezier(.4,.2,.2,1);
+    transform-style:preserve-3d;
+  }
+  .flip-card.flipped .flip-inner{transform:rotateY(180deg);}
+  .flip-face{
+    position:absolute;inset:0;
+    backface-visibility:hidden;
+    border-radius:14px;
+    display:flex;flex-direction:column;justify-content:center;
+    padding:22px;
+  }
+  .flip-front{
+    background:linear-gradient(135deg, var(--navy) 0%, var(--brown) 130%);
+    color:#fff;
+  }
+  .flip-front .term{
+    font-family:'Fraunces',serif;font-size:1.9rem;font-weight:700;
+  }
+  .flip-front .tap{
+    margin-top:14px;font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--gold-bright);
+  }
+  .flip-back{
+    background:var(--bg);
+    transform:rotateY(180deg);
+    color:var(--gray-dark);
+    border:1.5px solid var(--gold);
+  }
+  .flip-back .eyebrow{font-size:0.65rem;}
+  .flip-back p{font-size:1rem;line-height:1.5;margin-top:8px;}
+  .decoder-dots{display:flex;gap:6px;margin-top:16px;justify-content:center;}
+  .dot{width:6px;height:6px;border-radius:50%;background:var(--line);cursor:pointer;transition:background .2s;}
+  .dot.active{background:var(--gold);}
+
+  @media (max-width:900px){
+    .hero .wrap{grid-template-columns:1fr;}
+  }
+
+  /* ---------- STATS STRIP ---------- */
+  .stats{
+    background:var(--brown-deep);
+    color:#F3EEE2;
+    padding:56px 0;
+  }
+  .stats .wrap{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:32px;
+  }
+  .stat{
+    border-left:2px solid var(--gold);padding-left:20px;
+  }
+  .stat .num{
+    font-family:'Space Mono',monospace;font-weight:700;font-size:2.4rem;color:var(--gold-bright);
+    display:block;
+  }
+  .stat p{margin:8px 0 0;font-size:0.92rem;color:#D9CFC0;line-height:1.5;}
+  @media (max-width:760px){
+    .stats .wrap{grid-template-columns:1fr;}
+  }
+
+  /* ---------- SECTION HEADERS ---------- */
+  .sec-head{max-width:640px;margin-bottom:48px;}
+  .sec-head h2{font-size:clamp(1.8rem,3.4vw,2.5rem);margin-top:10px;}
+  .sec-head p{color:var(--gray-mid);margin-top:14px;font-size:1.02rem;line-height:1.6;}
+
+  /* ---------- ABOUT / AUTHOR ---------- */
+  .about{background:var(--card);}
+  .about .wrap{
+    display:grid;grid-template-columns:280px 1fr;gap:56px;align-items:center;
+  }
+  .photo-frame{
+    width:100%;aspect-ratio:1/1.05;border-radius:16px;
+    background:linear-gradient(160deg, var(--navy) 0%, var(--brown) 100%);
+    border:6px solid var(--card);
+    outline:2px solid var(--gold);
+    outline-offset:6px;
+    display:flex;align-items:center;justify-content:center;
+    color:#F2EFE7;font-family:'Space Mono',monospace;font-size:0.82rem;text-align:center;
+    padding:20px;
+  }
+  .about-note h2{margin-bottom:4px;}
+  .about-note .role{color:var(--brown);font-weight:600;margin-bottom:18px;display:block;}
+  .about-note p{line-height:1.75;font-size:1.02rem;margin-bottom:16px;}
+  .contact-row{display:flex;gap:18px;margin-top:22px;flex-wrap:wrap;}
+  .contact-pill{
+    display:inline-flex;align-items:center;gap:8px;
+    background:var(--bg);border:1px solid var(--line);
+    padding:9px 16px;border-radius:999px;font-size:0.86rem;font-weight:600;
+  }
+
+  /* ---------- HUBS (each one is now its own standalone, full section) ---------- */
+  .hub-section{
+    min-height:78vh;
+    display:flex;align-items:center;
+    border-top:5px solid var(--gold);
+  }
+  .hub-section.bg-navy{background:var(--navy);color:#F2EFE7;}
+  .hub-section.bg-brown{background:var(--brown-deep);color:#F3EEE2;}
+  .hub-section.bg-navy-deep{background:var(--navy-deep);color:#F2EFE7;}
+  .hub-content{max-width:680px;}
+  .hub-content .tag{
+    font-family:'Space Mono',monospace;font-size:0.72rem;color:var(--gold-bright);
+    letter-spacing:0.12em;text-transform:uppercase;
+  }
+  .hub-content h2{color:#FBF8F1;font-size:clamp(1.9rem,3.6vw,2.6rem);margin:14px 0 16px;}
+  .hub-content p{color:#C7CFD8;font-size:1.05rem;line-height:1.7;margin-bottom:22px;max-width:560px;}
+  .status{
+    display:inline-block;font-size:0.75rem;font-weight:700;
+    padding:6px 14px;border-radius:999px;
+  }
+  .status.live{background:rgba(201,154,61,0.25);color:var(--gold-bright);}
+  .status.soon{background:rgba(255,255,255,0.12);color:#E4E0D6;}
+
+  /* ---------- LIBRARY SEARCH BAR ---------- */
+  .search-wrap{position:relative;margin-bottom:28px;}
+  .search-wrap input{
+    width:100%;padding:15px 46px 15px 20px;border-radius:999px;
+    border:1.5px solid var(--line);background:var(--bg);
+    font-family:'Inter',sans-serif;font-size:0.98rem;color:var(--gray-dark);
+  }
+  .search-wrap input:focus{outline:none;border-color:var(--gold);}
+  .search-icon{
+    position:absolute;right:20px;top:50%;transform:translateY(-50%);
+    color:var(--gray-mid);pointer-events:none;
+  }
+  #noResults{padding:18px 4px;color:var(--gray-mid);font-size:0.95rem;}
+
+  /* ---------- EXPLAINER LIBRARY (FAQ reveal) ---------- */
+  .library{background:var(--card);}
+  .faq-item{
+    border:1px solid var(--line);
+    border-radius:12px;
+    margin-bottom:16px;
+    overflow:hidden;
+    background:var(--bg);
+  }
+  .faq-q{
+    width:100%;text-align:left;background:none;border:none;cursor:pointer;
+    padding:22px 26px;display:flex;justify-content:space-between;align-items:center;gap:16px;
+    font-family:'Fraunces',serif;font-size:1.1rem;font-weight:600;color:var(--navy);
+  }
+  .faq-q .icon{
+    width:30px;height:30px;border-radius:50%;background:var(--gold);color:var(--navy-deep);
+    display:flex;align-items:center;justify-content:center;font-size:1.1rem;font-weight:900;
+    flex-shrink:0;transition:transform .3s ease;
+  }
+  .faq-item.open .faq-q .icon{transform:rotate(45deg);background:var(--brown);color:#fff;}
+  .faq-panel{
+    max-height:0;overflow:hidden;transition:max-height .5s ease;
+  }
+  .faq-item.open .faq-panel{max-height:900px;}
+  .faq-panel-inner{padding:0 26px 26px;}
+  .pdf-frame-wrap{
+    border:2px solid var(--gold);border-radius:10px;overflow:hidden;
+    background:#fff;height:640px;
+  }
+  .pdf-frame-wrap iframe{width:100%;height:100%;border:none;}
+  .pdf-toolbar{
+    display:flex;justify-content:space-between;align-items:center;margin-bottom:12px;
+  }
+  .pdf-toolbar a{
+    font-size:0.85rem;font-weight:700;color:var(--brown);
+    display:inline-flex;align-items:center;gap:6px;
+  }
+
+  /* ---------- SUBSTACK ---------- */
+  .substack{background:var(--bg);}
+  .post-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-bottom:36px;}
+  .post-card{
+    background:var(--card);border:1px solid var(--line);border-radius:var(--radius);
+    padding:26px;transition:transform .25s ease;
+  }
+  .post-card:hover{transform:translateY(-4px);}
+  .post-card .eyebrow{font-size:0.66rem;}
+  .post-card h3{font-size:1.15rem;margin:10px 0 8px;color:var(--navy);}
+  .post-card p{color:var(--gray-mid);font-size:0.9rem;line-height:1.55;}
+  .post-card .read{color:var(--brown);font-weight:700;font-size:0.85rem;margin-top:14px;display:inline-block;}
+  .post-links{display:flex;gap:18px;margin-top:14px;flex-wrap:wrap;}
+  .post-links a{color:var(--brown);font-weight:700;font-size:0.85rem;text-decoration:none;}
+  .post-links a:hover{text-decoration:underline;}
+  @media (max-width:900px){.post-grid{grid-template-columns:1fr;}}
+
+  /* ---------- ARTICLE MODAL (Read on Sorted) ---------- */
+  .article-modal-overlay{
+    position:fixed;inset:0;background:rgba(23,50,78,0.75);
+    display:none;align-items:flex-start;justify-content:center;
+    padding:70px 20px;overflow-y:auto;z-index:999;
+  }
+  .article-modal-overlay.open{display:flex;}
+  .article-modal{
+    background:var(--card);border-radius:var(--radius);max-width:680px;width:100%;
+    padding:44px 40px;position:relative;border-top:5px solid var(--gold);
+  }
+  .article-modal-close{
+    position:absolute;top:18px;right:18px;width:34px;height:34px;border-radius:50%;
+    border:none;background:var(--bg);color:var(--gray-dark);font-size:1.2rem;cursor:pointer;
+    display:flex;align-items:center;justify-content:center;line-height:1;
+  }
+  .article-modal .eyebrow{font-family:'Space Mono',monospace;font-size:0.7rem;color:var(--brown);
+    letter-spacing:0.1em;text-transform:uppercase;}
+  .article-modal h2{color:var(--navy);margin:12px 0 22px;font-size:1.7rem;}
+  .article-modal-body p{margin-bottom:16px;line-height:1.75;color:var(--gray-dark);font-size:1rem;}
+  .substack-embed{
+    background:var(--navy);border-radius:var(--radius);padding:36px;text-align:center;color:#F2EFE7;
+  }
+  .substack-embed h3{color:#fff;margin-bottom:10px;}
+  .substack-embed p{color:#C7CFD8;margin-bottom:20px;}
+
+  /* ---------- SUBSTACK ID CARD (big, so it's unmistakably "this is my Substack") ---------- */
+  .substack-id-card{
+    background:linear-gradient(135deg,var(--navy) 0%,var(--navy-deep) 100%);
+    border-radius:var(--radius);
+    padding:44px 40px;
+    margin-bottom:40px;
+    border-top:5px solid var(--gold);
+    text-align:center;
+  }
+  .substack-id-badge{
+    width:64px;height:64px;border-radius:50%;
+    background:var(--gold);color:var(--navy-deep);
+    display:flex;align-items:center;justify-content:center;
+    font-family:'Fraunces',serif;font-weight:900;font-size:1.9rem;
+    margin:0 auto 18px;
+  }
+  .substack-id-card .substack-id-label{
+    display:block;font-family:'Space Mono',monospace;font-size:0.72rem;
+    letter-spacing:0.12em;text-transform:uppercase;color:var(--gold-bright);margin-bottom:8px;
+  }
+  .substack-id-card h3{
+    color:#FBF8F1;font-size:1.7rem;margin-bottom:10px;
+  }
+  .substack-id-card p{
+    color:#C7CFD8;font-size:1rem;max-width:480px;margin:0 auto 26px;
+  }
+  .substack-id-card .substack-embed{
+    background:rgba(255,255,255,0.06);
+    border:1px solid rgba(255,255,255,0.14);
+    padding:24px;text-align:left;max-width:480px;margin:0 auto;
+  }
+  .substack-id-card .substack-embed h3{font-size:1.05rem;}
+
+  /* ---------- CONTACT ---------- */
+  .contact{background:var(--navy-deep);color:#F2EFE7;}
+  .contact .sec-head h2{color:#fff;}
+  .contact .sec-head p{color:#B9C2CB;}
+  form.contact-form{
+    max-width:600px;display:grid;gap:18px;
+  }
+  .contact-form label{
+    font-family:'Space Mono',monospace;font-size:0.72rem;letter-spacing:0.08em;
+    text-transform:uppercase;color:var(--gold-bright);display:block;margin-bottom:6px;
+  }
+  .contact-form input, .contact-form textarea{
+    width:100%;background:transparent;border:none;border-bottom:2px solid rgba(255,255,255,0.25);
+    color:#fff;font-family:'Inter',sans-serif;font-size:1rem;padding:10px 2px;
+  }
+  .contact-form input:focus, .contact-form textarea:focus{
+    outline:none;border-color:var(--gold);
+  }
+  .contact-form textarea{resize:vertical;min-height:100px;}
+  .form-note{font-size:0.82rem;color:#8D97A2;}
+  #form-status{margin-top:8px;font-size:0.9rem;color:var(--gold-bright);}
+
+  footer{
+    background:var(--navy-deep);color:#8D97A2;text-align:center;padding:30px 24px;
+    border-top:1px solid rgba(255,255,255,0.08);font-size:0.85rem;
+  }
+  footer span{color:var(--gold-bright);}
+
+  /* ---------- PAGES (each nav item is now a full standalone view, not a scroll target) ---------- */
+  .page{display:none;}
+  .page.active{display:block;animation:pageIn .35s ease;}
+  @keyframes pageIn{
+    from{opacity:0;transform:translateY(14px);}
+    to{opacity:1;transform:translateY(0);}
+  }
+  .nav-links a.active-link::after{width:100%;}
+
+  /* reveal on scroll */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .7s ease, transform .7s ease;}
+  .reveal.in{opacity:1;transform:translateY(0);}
+
+  @media (prefers-reduced-motion: reduce){
+    *{transition:none !important;animation:none !important;}
+  }
+</style>
+</head>
+<body>
+
+<header>
+  <nav>
+    <a href="#home" class="logo">Sorted<span>.</span></a>
+    <ul class="nav-links" id="navLinks">
+      <li><a href="#opportunities">Opportunities</a></li>
+      <li><a href="#library">Explainer Library</a></li>
+      <li><a href="#research">Research</a></li>
+      <li><a href="#aid">Aid Reality Check</a></li>
+      <li><a href="#articles">Articles</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle menu">&#9776;</button>
+  </nav>
+</header>
+
+<div class="page" id="home">
+<!-- ================= HERO ================= -->
+<section class="hero">
+  <div class="wrap">
+    <div>
+      <span class="eyebrow">FOR STUDENTS WHO ARE TIRED OF GUESSING</span>
+      <h1>Nobody explains what this stuff <em>actually</em> means.<br>So we're doing it.</h1>
+      <p class="sub">From university applications to scholarships, opportunities, study resources, research help, and real financial aid numbers all in one place, explained the way a friend would explain it, not the way a brochure would.</p>
+      <div class="hero-ctas">
+        <a href="#opportunities" class="btn">See what's inside &#8594;</a>
+        <a href="#library" class="btn btn-outline">Open the glossary</a>
+      </div>
+    </div>
+
+    <div class="decoder">
+      <span class="decoder-label">Tap the card. Decode the jargon.</span>
+      <div class="flip-card" id="flipCard">
+        <div class="flip-inner">
+          <div class="flip-face flip-front">
+            <div class="term" id="termFront">Need blind</div>
+            <div class="tap">tap to decode &#8594;</div>
+          </div>
+          <div class="flip-face flip-back">
+            <span class="eyebrow">In plain English</span>
+            <p id="termBack">The school decides whether to admit you without ever looking at whether your family can pay.</p>
+          </div>
+        </div>
+      </div>
+      <div class="decoder-dots" id="decoderDots"></div>
+    </div>
+  </div>
+</section>
+
+<!-- ================= STATS ================= -->
+<section class="stats">
+  <div class="wrap">
+    <div class="stat">
+      <span class="num" data-target="52">0</span>
+      <p>percent of students surveyed had never heard the terms need blind or need aware before</p>
+    </div>
+    <div class="stat">
+      <span class="num" data-target="74">0</span>
+      <p>percent had no clear idea how financial aid is actually calculated</p>
+    </div>
+    <div class="stat">
+      <span class="num" data-target="63">0</span>
+      <p>percent considered skipping a school they liked because the cost information was unclear</p>
+    </div>
+  </div>
+</section>
+
+<!-- ================= ABOUT / AUTHOR ================= -->
+<section class="about" id="about">
+  <div class="wrap">
+    <div class="photo-frame">
+      <img src="images/adan.jpg" alt="Adan Salahuddin">    </div>
+    <div class="about-note reveal">
+      <span class="eyebrow">The person behind Sorted.</span>
+      <h2>Hey, I'm Adan Salahuddin.</h2>
+      <span class="role">Student. Applicant. Tired of guessing.</span>
+      <p>I built Sorted because applying to universities abroad often felt like trying to solve a puzzle without all the pieces. After surveying Pakistani students going through the same process, I realized we were all asking the same questions and searching through far too many tabs to find the answers.</p>
+      <p>So I built the resource I wish I'd had from day one. A place for opportunities, student friendly guides, research guidance, financial aid resources, O and A Level materials, and everything else that makes student life a little less confusing. It's still growing because students' questions keep evolving, and so will Sorted.</p>
+      <div class="contact-row">
+        <span class="contact-pill">&#128231; Reach out below</span>
+        <span class="contact-pill">&#128214; New posts on Substack</span>
+      </div>
+    </div>
+  </div>
+</section>
+</div><!-- /page: home -->
+
+<div class="page" id="opportunities">
+<!-- ================= OPPORTUNITIES HUB ================= -->
+<section class="hub-section bg-navy">
+  <div class="wrap">
+    <div class="hub-content reveal">
+      <span class="tag">01 &middot; Opportunities Hub</span>
+      <h2>Deadlines you won't accidentally miss</h2>
+      <p>Research programs, olympiads, competitions, and internships, filterable by subject and level, so you stop finding out about them a week too late.</p>
+      <span class="status soon">Filling up before launch</span>
+    </div>
+  </div>
+</section>
+</div><!-- /page: opportunities -->
+
+<div class="page" id="library">
+<!-- ================= EXPLAINER LIBRARY (FAQ REVEAL) ================= -->
+<section class="library">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Uni Explainer Library</span>
+      <h2>Ask the question. Get the answer.</h2>
+      <p>Click a question below. The full guide opens right here, no separate download needed.</p>
+    </div>
+
+    <div class="search-wrap reveal">
+      <input type="text" id="librarySearch" placeholder="Search the library, try need aware or superscore" oninput="filterLibrary(this.value)">
+      <span class="search-icon">&#128269;</span>
+    </div>
+    <p id="noResults" style="display:none;">No guides match that search yet. Try a different word.</p>
+
+    <div class="faq-item" id="faq1" data-keywords="need blind, need aware, financial aid, cost of attendance, expected family contribution, student aid index, css profile, harvard, mit, princeton, yale, amherst, dartmouth, bowdoin, international students, scholarship, middle income">
+      <button class="faq-q" onclick="toggleFaq('faq1')">
+        <span>So what's the actual difference between need blind and need aware?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-panel">
+        <div class="faq-panel-inner">
+          <div class="pdf-toolbar">
+            <span class="form-note" style="color:var(--gray-mid);">Need blind vs need aware, explained</span>
+            <a href="pdfs/need-blind-vs-need-aware.pdf" target="_blank">
+                Open full size ↗
+            </a> 
+          </div>
+          <div class="pdf-frame-wrap">
+           <iframe
+               src="pdfs/need-blind-vs-need-aware.pdf"
+               title="Need Blind vs Need Aware">
+           </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faq-item" id="faq2" data-keywords="early decision, early action, regular decision, rolling admission, deferred, waitlisted, holistic review, demonstrated interest, legacy, first generation, yield, gpa, weighted, unweighted, class rank, ap, ib, a levels, dual enrollment, test optional, test blind, superscore, spike, passion project, independent research, portfolio, common app, coalition app, ucas, supplemental essays, letters of recommendation, activities list, fafsa, css profile, merit aid, need based aid, gap year, binding, non binding, appeal, glossary">
+      <button class="faq-q" onclick="toggleFaq('faq2')">
+        <span>Okay but what do all these other application words even mean?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-panel">
+        <div class="faq-panel-inner">
+          <div class="pdf-toolbar">
+            <span class="form-note" style="color:var(--gray-mid);">The full college applications glossary</span>
+            <a href="pdfs/college-applications-glossary.pdf" target="_blank">
+                Open full size ↗
+            </a>
+          </div>
+          <div class="pdf-frame-wrap">
+            <iframe
+                 src="pdfs/college-applications-glossary.pdf"
+                 title="College Applications Glossary">
+            </iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      TO ADD A NEW PDF, COPY EVERYTHING BELOW THIS LINE, PASTE IT RIGHT ABOVE THIS COMMENT,
+      THEN CHANGE: the id (faq3, faq4...), the data-keywords, the question text,
+      the toolbar label, and both the href and src paths to your new PDF file.
+
+    <div class="faq-item" id="faq3" data-keywords="put, searchable, words, from, that, pdf, here">
+      <button class="faq-q" onclick="toggleFaq('faq3')">
+        <span>Your new question goes here?</span>
+        <span class="icon">+</span>
+      </button>
+      <div class="faq-panel">
+        <div class="faq-panel-inner">
+          <div class="pdf-toolbar">
+            <span class="form-note" style="color:var(--gray-mid);">Short label for this guide</span>
+            <a href="pdfs/your-new-file.pdf" target="_blank">Open full size &#8599;</a>
+          </div>
+          <div class="pdf-frame-wrap">
+            <iframe src="pdfs/your-new-file.pdf" title="Your new guide"></iframe>
+          </div>
+        </div>
+      </div>
+    </div>
+    -->
+  </div>
+</section>
+</div><!-- /page: library -->
+
+<div class="page" id="research">
+<!-- ================= INDEPENDENT RESEARCH ================= -->
+<section class="hub-section bg-brown">
+  <div class="wrap">
+    <div class="hub-content reveal">
+      <span class="tag">03 &middot; Independent Research &amp; Article Ideas</span>
+      <h2>A starting point, not a blank page</h2>
+      <p>Prompts and a simple starter kit for beginning your own research project, since most students said they started one and never finished it.</p>
+      <span class="status soon">Coming before launch</span>
+    </div>
+  </div>
+</section>
+</div><!-- /page: research -->
+
+<div class="page" id="aid">
+<!-- ================= FINANCIAL AID REALITY CHECK ================= -->
+<section class="hub-section bg-navy-deep">
+  <div class="wrap">
+    <div class="hub-content reveal">
+      <span class="tag">04 &middot; Financial Aid Reality Check</span>
+      <h2>Real numbers, not vague reassurance</h2>
+      <p>What aid actually looks like for a middle income Pakistani family, with real case studies instead of "you'll probably be fine."</p>
+      <span class="status soon">Coming before launch</span>
+    </div>
+  </div>
+</section>
+</div><!-- /page: aid -->
+
+<div class="page" id="articles">
+<!-- ================= SUBSTACK ================= -->
+<section class="substack">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Articles</span>
+      <h2>Thoughts worth sitting with.</h2>
+      <p>Longer pieces, posted as I write them. Subscribe below so nothing gets missed.</p>
+    </div>
+    <div class="substack-id-card reveal">
+      <div class="substack-id-badge">S</div>
+      <span class="substack-id-label">STAY IN THE LOOP</span>
+      <h3>Subscribe for new essays</h3>
+      <p>New articles on economics, philosophy, education, and the ideas that shape how we think, delivered straight to your inbox.</p>
+      <div class="substack-embed">
+        <iframe src="https://adansalahuddin.substack.com/embed" style="width:100%;height:320px;border:1px solid #EEE;background:white;" frameborder="0" scrolling="no"></iframe>
+      </div>
+    </div>
+
+    <div class="post-grid">
+      <div class="post-card reveal">
+        <span class="eyebrow">The veil you never lift</span>
+        <h3>PHILOSOPHY • ECONOMICS</h3>
+        <p>What if the biggest difference between you and the people you judge isn't character, but circumstance?</p>
+        <div class="post-links">
+          <a href="#" onclick="openArticle('modal-veil'); return false;">Read on Sorted</a>
+          <a href="https://open.substack.com/pub/adansalahuddin/p/the-veil-you-never-left?r=8npp7y&utm_campaign=post&utm_medium=web&showWelcomeOnShare=true" target="_blank">Read on Substack &#8594;</a>
+        </div>
+      </div>
+      <div class="post-card reveal">
+        <span class="eyebrow">Article title</span>
+        <h3>Your second most recent post</h3>
+        <p>A short one or two line excerpt describing what the post is actually about.</p>
+        <div class="post-links">
+          <a href="#">Read on Sorted</a>
+          <a href="#">Read on Substack &#8594;</a>
+        </div>
+      </div>
+      <div class="post-card reveal">
+        <span class="eyebrow">Article title</span>
+        <h3>Your third post</h3>
+        <p>A short one or two line excerpt describing what the post is actually about.</p>
+        <div class="post-links">
+          <a href="#">Read on Sorted</a>
+          <a href="#">Read on Substack &#8594;</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- ============ ARTICLE MODALS (the actual "Read on Sorted" content) ============ -->
+    <div class="article-modal-overlay" id="modal-veil">
+      <div class="article-modal">
+        <button class="article-modal-close" onclick="closeArticle('modal-veil')">&times;</button>
+        <span class="eyebrow">PHILOSOPHY • ECONOMICS</span>
+        <h2>The veil you never lift</h2>
+        <div class="article-modal-body">
+          <p>Why is this friend of mine so overly sensitive? God, it’s so hard to be around her.”
+
+“Why does this person always try to join our group? Get a life, dude.”
+
+“Why does this beggar keep asking for money when we’ve already refused politely?”
+
+“Bro should really update his fashion sense.”
+
+“Why is he doing O and A Levels privately? Has he suddenly become obsessed with studying and forgotten how to have fun?”
+
+“Why is he going to that university? He had decent grades. He probably just missed the deadlines.”
+
+We’ve all had thoughts like these. They feel harmless, even reasonable. The problem is that they’re all built on one assumption: that we know the whole story.
+
+But what if we simply don’t?
+
+What if the person with the “bad fashion sense” is wearing his late brother’s clothes because it’s the closest thing he has left to him?
+
+What if the student taking O and A Levels privately isn’t chasing perfect grades, but simply couldn’t afford college?
+
+What if the student who “missed the deadlines” was grieving the loss of a parent and university applications suddenly became the least important thing in his life?
+
+We spend so much time judging people’s choices that we forget we never lived the lives that produced them.
+
+Maybe that's where economics and philosophy quietly meet. One reminds us that our choices are shaped by the opportunities and limitations around us. The other asks an uncomfortable question: if none of us chose our starting point, how much of where we end up is really ours alone?
+
+Maybe that’s the veil we never leave.
+
+We look at outcomes and convince ourselves they reflect someone’s character, when they may simply reflect a reality we’ve never had to experience ourselves.
+
+Think about the beggar you walked past today.
+
+If you had been born into the same family, faced the same hardships, made the same impossible choices, and lived every day exactly as they did, are you so certain you wouldn’t have ended up in the same place?
+
+Maybe even worse.
+
+The uncomfortable truth is that none of us can answer that question honestly.
+
+That’s why I think judgment deserves more caution than certainty.
+
+Not because people are never responsible for their actions, but because we rarely know enough to decide how much of those actions were choice, and how much were circumstance.
+
+Maybe the difference between you and them isn’t character.
+
+Maybe it’s circumstance.
+
+Every judgment is really a judgment of a story you’ve never heard.
+
+Maybe the biggest illusion is believing our own lives weren't shaped by circumstances too. Perhaps the veil we never lift is believing we got here entirely on our own.</p>
+        </div>
+      </div>
+    </div>
+
+    <!--
+      TO ADD A NEW ARTICLE MODAL, COPY EVERYTHING BELOW THIS LINE, PASTE IT RIGHT ABOVE THIS
+      COMMENT, THEN CHANGE: the id (modal-2, modal-3...), the eyebrow, the title, and the body
+      paragraphs. Then update that card's "Read on Sorted" link above to
+      onclick="openArticle('modal-2'); return false;"
+
+    <div class="article-modal-overlay" id="modal-2">
+      <div class="article-modal">
+        <button class="article-modal-close" onclick="closeArticle('modal-2')">&times;</button>
+        <span class="eyebrow">CATEGORY HERE</span>
+        <h2>Your article title</h2>
+        <div class="article-modal-body">
+          <p>Paste your article text here.</p>
+        </div>
+      </div>
+    </div>
+    -->
+  </div>
+</section>
+</div><!-- /page: substack -->
+
+<div class="page" id="contact">
+<!-- ================= CONTACT ================= -->
+<section class="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="eyebrow">Get in touch</span>
+      <h2>Have a question, a correction, or an opportunity to share?</h2>
+      <p>Send it here. Replace the form action below with your own Formspree endpoint (or similar) to start receiving these by email.</p>
+    </div>
+    <form class="contact-form reveal" id="contactForm" action="https://formspree.io/f/mpqvjqqq" method="POST">
+      <div>
+        <label for="name">Name</label>
+        <input type="text" id="name" name="name" required>
+      </div>
+      <div>
+        <label for="email">Email</label>
+        <input type="email" id="email" name="email" required>
+      </div>
+      <div>
+        <label for="message">Message</label>
+        <textarea id="message" name="message" required></textarea>
+      </div>
+      <div>
+        <button type="submit" class="btn">Send it over</button>
+        <div id="form-status"></div>
+      </div>
+      <p class="form-note">This goes straight to an inbox quietly, no chat widget, no account needed.</p>
+    </form>
+  </div>
+</section>
+</div><!-- /page: contact -->
+
+<footer>
+  Built by a student, for students. <span>Sorted.</span> &mdash; last updated 2026.
+</footer>
+
+<script>
+  // mobile nav
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => navLinks.classList.toggle('open'));
+  navLinks.querySelectorAll('a').forEach(a => a.addEventListener('click', () => navLinks.classList.remove('open')));
+
+  // ---------- PAGE ROUTER ----------
+  // clicking a nav link no longer scrolls down the page, it swaps which
+  // whole section is visible, like switching pages on a normal website.
+  const pages = document.querySelectorAll('.page');
+
+  function showPage(id){
+    if (!document.getElementById(id) || !document.getElementById(id).classList.contains('page')){
+      id = 'home';
+    }
+    pages.forEach(p => p.classList.toggle('active', p.id === id));
+    // reveal any fade-in content inside the page we just switched to right away
+    document.getElementById(id).querySelectorAll('.reveal').forEach(el => el.classList.add('in'));
+    // highlight the matching nav link
+    document.querySelectorAll('.nav-links a').forEach(a => {
+      a.classList.toggle('active-link', a.getAttribute('href') === '#' + id);
+    });
+    window.scrollTo(0, 0);
+  }
+
+  document.querySelectorAll('a[href^="#"]').forEach(a => {
+    a.addEventListener('click', (e) => {
+      const targetId = a.getAttribute('href').slice(1);
+      const targetEl = document.getElementById(targetId);
+      if (targetEl && targetEl.classList.contains('page')){
+        e.preventDefault();
+        history.pushState(null, '', '#' + targetId);
+        showPage(targetId);
+      }
+    });
+  });
+
+  window.addEventListener('popstate', () => {
+    showPage(location.hash.replace('#','') || 'home');
+  });
+
+  // show the right page on first load (supports sharing a direct link like yoursite.com/#library)
+  showPage(location.hash.replace('#','') || 'home');
+
+  // decoder flip card
+  const terms = [
+    { term: "Need blind", def: "The school decides whether to admit you without ever looking at whether your family can pay." },
+    { term: "Spike", def: "Your one clear standout strength, instead of being decent at ten different things." },
+    { term: "Superscore", def: "The school combines your best section scores across multiple test dates into one final score." },
+    { term: "Holistic review", def: "Grades and scores are only part of it. Essays, activities, and recommendations all count too." },
+    { term: "Demonstrated interest", def: "Some schools track how much genuine interest you show and factor that into their decision." }
+  ];
+  let idx = 0;
+  const flipCard = document.getElementById('flipCard');
+  const termFront = document.getElementById('termFront');
+  const termBack = document.getElementById('termBack');
+  const dotsWrap = document.getElementById('decoderDots');
+
+  terms.forEach((t, i) => {
+    const d = document.createElement('div');
+    d.className = 'dot' + (i === 0 ? ' active' : '');
+    d.addEventListener('click', (e) => { e.stopPropagation(); setTerm(i); });
+    dotsWrap.appendChild(d);
+  });
+
+  function setTerm(i){
+    idx = i;
+    flipCard.classList.remove('flipped');
+    setTimeout(() => {
+      termFront.textContent = terms[idx].term;
+      termBack.textContent = terms[idx].def;
+    }, 300);
+    [...dotsWrap.children].forEach((d, di) => d.classList.toggle('active', di === i));
+  }
+
+  flipCard.addEventListener('click', () => {
+    flipCard.classList.toggle('flipped');
+  });
+
+  setInterval(() => {
+    if (!flipCard.classList.contains('flipped')){
+      flipCard.classList.add('flipped');
+      setTimeout(() => {
+        idx = (idx + 1) % terms.length;
+        termFront.textContent = terms[idx].term;
+        termBack.textContent = terms[idx].def;
+        [...dotsWrap.children].forEach((d, di) => d.classList.toggle('active', di === idx));
+        flipCard.classList.remove('flipped');
+      }, 700);
+    }
+  }, 4500);
+
+  // library search bar, matches against each PDF's keywords and its question text
+  function filterLibrary(query){
+    const q = query.trim().toLowerCase();
+    const items = document.querySelectorAll('.faq-item');
+    let anyVisible = false;
+    items.forEach(item => {
+      const keywords = (item.dataset.keywords || '').toLowerCase();
+      const questionText = item.querySelector('.faq-q span').textContent.toLowerCase();
+      const match = q === '' || keywords.includes(q) || questionText.includes(q);
+      item.style.display = match ? '' : 'none';
+      if (match) anyVisible = true;
+    });
+    document.getElementById('noResults').style.display = anyVisible ? 'none' : 'block';
+  }
+
+  // FAQ toggle
+  function toggleFaq(id){
+    const el = document.getElementById(id);
+    const wasOpen = el.classList.contains('open');
+    document.querySelectorAll('.faq-item').forEach(f => f.classList.remove('open'));
+    if (!wasOpen) el.classList.add('open');
+  }
+
+  // article modal, "Read on Sorted"
+  function openArticle(id){
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.add('open');
+    document.body.style.overflow = 'hidden';
+  }
+  function closeArticle(id){
+    const el = document.getElementById(id);
+    if (!el) return;
+    el.classList.remove('open');
+    document.body.style.overflow = '';
+  }
+  // click outside the card, or press escape, to close
+  document.querySelectorAll('.article-modal-overlay').forEach(overlay => {
+    overlay.addEventListener('click', (e) => {
+      if (e.target === overlay) closeArticle(overlay.id);
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape'){
+      document.querySelectorAll('.article-modal-overlay.open').forEach(o => closeArticle(o.id));
+    }
+  });
+
+  // stat counters
+  const counters = document.querySelectorAll('.stat .num');
+  const counterObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){
+        const el = entry.target;
+        const target = parseInt(el.dataset.target, 10);
+        let cur = 0;
+        const step = Math.max(1, Math.round(target / 40));
+        const tick = () => {
+          cur += step;
+          if (cur >= target){ el.textContent = target + '%'; }
+          else { el.textContent = cur + '%'; requestAnimationFrame(tick); }
+        };
+        tick();
+        counterObserver.unobserve(el);
+      }
+    });
+  }, { threshold: 0.5 });
+  counters.forEach(c => counterObserver.observe(c));
+
+  // scroll reveal
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting){
+        entry.target.classList.add('in');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.15 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // contact form (Formspree, no backend needed)
+  const form = document.getElementById('contactForm');
+  const status = document.getElementById('form-status');
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    status.textContent = 'Sending...';
+    try{
+      const res = await fetch(form.action, {
+        method: 'POST',
+        body: new FormData(form),
+        headers: { 'Accept': 'application/json' }
+      });
+      if (res.ok){
+        status.textContent = "Sent. I'll get back to you soon.";
+        form.reset();
+      } else {
+        status.textContent = "Something didn't go through. Try again in a bit.";
+      }
+    } catch(err){
+      status.textContent = "Couldn't send that. Check your connection and try again.";
+    }
+  });
+</script>
+
+</body>
+</html>
